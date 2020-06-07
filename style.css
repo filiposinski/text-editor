@@ -10,14 +10,25 @@ body {
 }
 
 .main {
-    max-width: 400px;
-    width: 100%;
+    margin: 0 auto;
 }
 
 .title {
     font-weight: 600;
     font-size: 44px;
     margin: 0;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.form__content {
+    display: block;
+    min-width: 350px;
 }
 
 .form__label {
@@ -58,18 +69,22 @@ body {
     background: orangered;
 }
 
-.form__values {
-    margin: 20px 0 0 0;
+.form__menu {
+    margin: 20px;
+    display: block;
 }
 
 .form__button--bold,
 .form__button--italic,
-.form__button--underline {
+.form__button--underline,
+.form__button--smaller,
+.form__button--bigger {
     background: orange;
-    display: inline-block;
+    display: block;
     padding: 5px 0;
     min-width: 50px;
     border: none;
+    margin: 10px;
 }
 
 .button__background {

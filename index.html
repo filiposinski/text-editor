@@ -12,19 +12,22 @@
     <main class="main">
         <h1 class="title">TEXT EDITOR</h1>
         <form class="form">
-            <div class="form__values">
+            <div class="form__menu">
                 <button class="form__button form__button--bold form__button--bold-js"><b>B</b></button>
                 <button class="form__button form__button--italic form__button--italic-js"><i>I</i></button>
                 <button class="form__button form__button--underline form__button--underline-js"><u>U</u></button>
-
+                <button class="form__button form__button--smaller form__button--smaller-js">▲</button>
+                <button class="form__button form__button--bigger form__button--bigger-js">▼</button>
             </div>
-            <p class="form__wrapper">
-                <label class="form__label" for=" message ">Your message</label>
-                <textarea id="message " class="form__message form__message--js "></textarea>
-            </p>
-            <div class=" form__actions ">
-                <button class="form__button form__button--load form__button--load-js ">LOAD</button>
-                <button class="form__button form__button--save form__button--save-js ">SAVE</button>
+            <div class="form__content">
+                <p class="form__wrapper">
+                    <label class="form__label" for=" message ">Your message</label>
+                    <textarea id="message " class="form__message form__message--js "></textarea>
+                </p>
+                <div class=" form__actions ">
+                    <button class="form__button form__button--load form__button--load-js ">LOAD</button>
+                    <button class="form__button form__button--save form__button--save-js ">SAVE</button>
+                </div>
             </div>
         </form>
         <script src="main.js "></script>
