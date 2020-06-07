@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+body {
+    color: black;
+    background: #FAFAFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.main {
+    max-width: 400px;
+    width: 100%;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 44px;
+    margin: 0;
+}
+
+.form__label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.form__actions {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__message {
+    width: 100%;
+    background: white;
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    min-height: 400px;
+}
+
+.form__button {
+    background: none;
+    border-radius: 5px;
+    border: 1px solid orange;
+    padding: 15px 0;
+    min-width: 150px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.form__button--save {
+    background: orange;
+}
+
+.form__button:hover {
+    background: orangered;
+}
+
+.form__values {
+    margin: 20px 0 0 0;
+}
+
+.form__button--bold,
+.form__button--italic,
+.form__button--underline {
+    background: orange;
+    display: inline-block;
+    padding: 5px 0;
+    min-width: 50px;
+    border: none;
+}
+
+.button__background {
+    background: orangered;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
