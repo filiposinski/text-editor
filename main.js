@@ -4,72 +4,122 @@ const save = document.querySelector('.form__button--save-js');
 const bold = document.querySelector('.form__button--bold-js');
 const italic = document.querySelector('.form__button--italic-js');
 const underline = document.querySelector('.form__button--underline-js');
-const size = document.querySelector('.form__button--size-js');
+const big = document.querySelector('.form__button--bigger-js');
+const small = document.querySelector('.form__button--smaller-js');
+const sizeDisplay = document.querySelector('.fontSize-displayer');
 
-const content = {
+
+let content = {
     text: null,
     bold: false,
     italic: false,
     underline: false,
-    size: 12
+    size: 16
 }
+
+let size = content.size;
+
+function setContent() {
+    sizeDisplay.innerHTML = content.size;
+    message.style.fontSize = `${content.size}px`;
+
+    if (content.bold == true) {
+        message.style.fontWeight = `bold`;
+
+        bold.classList.add('button__background');
+    } else {
+        message.style.fontWeight = ``;
+        bold.classList.remove('button__background');
+    }
+    if (content.italic == true) {
+
+        message.style.fontStyle = `italic`;
+        italic.classList.add('button__background');
+    } else {
+        message.style.fontStyle = ``;
+        italic.classList.remove('button__background');
+    }
+    if (content.underline == true) {
+
+        message.style.textDecoration = `underline`;
+        underline.classList.add('button__background');
+    } else {
+        message.style.textDecoration = ``;
+        underline.classList.remove('button__background');
+    }
+}
+
+setContent();
+
 
 bold.addEventListener('click', (e) => {
     e.preventDefault();
-    message.classList.toggle('bold');
-    bold.classList.toggle('button__background');
     if (content.bold == false) content.bold = true;
     else content.bold = false;
     console.log(`bold ${content.bold}`);
+    setContent();
 })
 
 italic.addEventListener('click', (e) => {
     e.preventDefault();
-    message.classList.toggle('italic');
-    italic.classList.toggle('button__background');
     if (content.italic == false) content.italic = true;
     else content.italic = false;
     console.log(`italic ${content.italic}`);
+    setContent();
 })
 
 underline.addEventListener('click', (e) => {
     e.preventDefault();
-    message.classList.toggle('underline');
-    underline.classList.toggle('button__background');
     if (content.underline == false) content.underline = true;
     else content.underline = false;
     console.log(`underline ${content.underline}`);
+    setContent();
+})
+
+big.addEventListener('click', (e) => {
+    e.preventDefault();
+    size = ++(content.size);
+    console.log(size);
+    message.style.fontSize = `${size}px`;
+    console.log(message.style.fontSize);
+    content.size = size;
+    setContent();
+
+})
+
+small.addEventListener('click', (e) => {
+    e.preventDefault();
+    size = --(content.size);
+    console.log(size);
+    message.style.fontSize = `${size}px`;
+    console.log(message.style.fontSize);
+    content.size = size;
+    setContent();
 })
 
 save.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log(message.value);
     content.text = message.value;
-    console.log(content.text);
-    console.log(content);
     const jsonContent = JSON.stringify(content);
     localStorage.setItem('message', jsonContent);
     console.log(jsonContent);
 })
 
 load.addEventListener('click', (e) => {
+
     e.preventDefault();
+
     const stringifyContent = localStorage.getItem('message');
-    const objContent = JSON.parse(stringifyContent);
-    message.value = objContent.text;
-    if (objContent.bold == true) {
-        message.classList.add('bold');
-        bold.classList.toggle('button__background');
-    }
-    if (objContent.italic == true) {
-        message.classList.add('italic');
-        italic.classList.toggle('button__background');
-    }
-    if (objContent.underline == true) {
-        message.classList.add('underline');
-        underline.classList.toggle('button__background');
-    }
+
+    content = JSON.parse(stringifyContent);
+    console.log(content);
+    message.value = content.text;
+
+
+    setContent();
+
 });
+
 
 
 function download(text, name, type) {
