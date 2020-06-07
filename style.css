@@ -1,21 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 body {
-    color: black;
-    background: #FAFAFC;
+    background: rgb(34, 179, 195);
+    background: linear-gradient(344deg, rgba(34, 179, 195, 1) 0%, rgba(253, 186, 45, 1) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     font-family: 'Source Code Pro', monospace;
+    margin: 0 auto;
 }
 
 .main {
     margin: 0 auto;
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .title {
     font-weight: 600;
-    font-size: 44px;
+    font-size: 40px;
     margin: 0;
 }
 
@@ -29,6 +33,7 @@ body {
 .form__content {
     display: block;
     min-width: 350px;
+    margin: 10px
 }
 
 .form__label {
@@ -48,7 +53,7 @@ body {
     background: white;
     border: 1px solid gainsboro;
     border-radius: 10px;
-    min-height: 400px;
+    min-height: 300px;
     font-size: 16px;
 }
 
@@ -71,7 +76,7 @@ body {
 }
 
 .form__menu {
-    margin: 20px;
+    margin-left: 10px;
     display: block;
 }
 
@@ -88,11 +93,21 @@ body {
     margin: 10px;
 }
 
-.fontSize-displayer {
+.form__button--smaller,
+.form__button--bigger {
     background: gray;
+}
+
+.empty {
+    content: ' ';
+    display: block;
+    height: 10px;
+}
+
+.fontSize-displayer {
+    border: 1px solid gray;
     border-radius: 5px;
     padding: 5px 0;
-    min-width: 50px;
     margin: 10px;
     letter-spacing: 0.5px;
     text-align: center;
